@@ -1,0 +1,71 @@
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+CREATE DATABASE IF NOT EXISTS `test` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `test`;
+
+CREATE TABLE IF NOT EXISTS `comments` (
+  `cmt_id` int(11) NOT NULL AUTO_INCREMENT,
+  `cmt_postid` varchar(10) NOT NULL,
+  `cmt_user` varchar(100) NOT NULL,
+  `cmt_comment` varchar(500) NOT NULL,
+  PRIMARY KEY (`cmt_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
+
+INSERT INTO `comments` (`cmt_id`, `cmt_postid`, `cmt_user`, `cmt_comment`) VALUES
+(1, '20', 'sumon', 'Wow nice post'),
+(2, '17', 'sumon', 'ok good'),
+(3, '16', 'Hasan Mahmud', 'well done '),
+(4, '15', 'Hasan Mahmud', 'wow maaaaaaan'),
+(19, '18', 'Hasan Mahmud', 'ewe'),
+(20, '19', 'Hasan Mahmud', 'wew'),
+(21, '17', 'Hasan Mahmud', 'Crazy post'),
+(22, '17', 'Hasan Mahmud', 'Nice jok');
+
+CREATE TABLE IF NOT EXISTS `post_add` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `dateposted` date NOT NULL,
+  `post` varchar(10000) NOT NULL,
+  `hour` time(6) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
+
+INSERT INTO `post_add` (`id`, `title`, `name`, `dateposted`, `post`, `hour`) VALUES
+(4, 'About Jam', 'Hasan', '2016-03-03', 'He only like english', '18:32:39.000000'),
+(5, 'About Xam', 'Hasan', '2016-03-03', 'Our Xam Ends', '18:36:14.000000'),
+(6, 'About Xam', 'Hasan', '2016-03-03', 'Our xam is over', '18:38:17.000000'),
+(7, 'about tv', 'sumon', '2016-03-03', 'abc', '21:49:26.000000'),
+(8, 'dada', 'sumon', '2016-03-04', 'sumon', '02:16:59.000000'),
+(9, 'Junior MTS', 'sumon', '2016-03-04', 'we are doing code', '02:52:14.000000'),
+(10, 'Hello', 'sumon', '2016-03-04', 'Today we are doing our project', '15:51:06.000000'),
+(11, 'Final Match', 'sumon', '2016-03-04', 'Sunday is the final match', '15:52:18.000000'),
+(12, 'Research MethodoLogy', 'sumon', '2016-03-04', 'I m going to write an paper on Online Banking System.as now a huge number of transaction are happeni', '16:45:24.000000'),
+(13, 'About Win', 'sumon', '2016-03-04', 'We won Last Match against Pakistan.pakistan Played very poorly that day, and we win the match.', '17:01:28.000000'),
+(14, 'Online Banking Security', 'sumon', '2016-03-04', 'Tomorrow we have to do our research.so we are preparing ourself for the reserach.Me, dada Bonshi and Rohinga are doing the research.we also have female member who is not helping us.', '17:08:04.000000'),
+(15, 'Our First Blog', 'sumon', '2016-03-05', 'We have successfully create our first blog, and we are very happy with our work.', '00:14:36.000000'),
+(16, 'Aiub', 'sumon', '2016-03-05', 'aiub is our versity', '00:40:05.000000'),
+(17, 'Rohinga', 'sumon', '2016-03-05', 'He comes from Mayanmar', '00:49:28.000000'),
+(18, 'ABc', 'sumon', '2016-03-05', 'gGAgsaggs', '02:12:17.000000'),
+(19, 'Hello ', 'sumon', '2016-03-07', 'Hi everyone', '01:11:54.000000'),
+(20, 'Bangladesh', 'sumon', '2016-03-07', 'we lost today', '01:13:10.000000'),
+(21, 'Its a Title', 'Hasan Mahmud', '2016-03-07', 'Its a Post\r\n', '03:02:04.000000');
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `fullname` varchar(40) NOT NULL,
+  `username` varchar(40) NOT NULL,
+  `password` varchar(40) NOT NULL,
+  `email` varchar(40) NOT NULL,
+  `phone` int(40) NOT NULL,
+  `address` varchar(40) NOT NULL,
+  `dob` varchar(40) NOT NULL,
+  `gender` varchar(40) NOT NULL,
+  `education` varchar(40) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+INSERT INTO `users` (`id`, `fullname`, `username`, `password`, `email`, `phone`, `address`, `dob`, `gender`, `education`) VALUES
+(1, 'sumon', 'sum', '123', 'sumonqb@gmail.com', 121232424, 'Dhaka', '1-1-1928', 'male', ''),
+(2, 'Hasan Mahmud', 'Hasan', '123', 'hasan@mahmud.com', 2147483647, 'Dampara', '1-10191-2', 'male', ''),
+(3, 'Yousuf Jamil', 'Jamil', '123', 'jamil@gmail.com', 10192910, 'Dhaka', '1-1-1992', 'male', '');
